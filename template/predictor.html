@@ -1,0 +1,114 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABSA</title>
+</head>
+
+<style>
+html body {
+    background-color: rgb(170, 170, 204);
+  }
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+.previous {
+  background-color: #f1f1f1;
+  color: black;}
+</style>
+
+
+<header><a href="/" class="previous">&laquo; Previous</a></header>
+<br>
+<h2 style="text-align: center"><u>Lets Analyse The Aspect Based Sentiments</u></h2>
+
+
+<div class="container">
+  <form action="/absapredict" method=post enctype="multipart/form-data">
+
+    <div class="row">
+      <div class="col-25">
+        <label for="file">Enter the feedback</label>
+      </div>
+      <div class="col-75">
+        <textarea id="file" name="file" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="file_aspect">Aspect Phrase/ Word</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="file_aspect" name="file_aspect" placeholder="Aspect..">
+      </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+
+
