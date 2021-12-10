@@ -39,7 +39,7 @@ def absapredict():
             file = request.form["file"]
             file_aspect = request.form["file_aspect"]
             
-            stop_words = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've",\
+            '''stop_words = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've",\
             "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', \
             'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their',\
             'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', \
@@ -89,8 +89,8 @@ def absapredict():
                     sent = ' '.join(e for e in sent.split() if e.lower() not in 'root/nltk_data/corpora/stop_words') # checking for stop words
                     preprocessed_text.append(sent.lower().strip())
                 return preprocessed_text
-            file = preprocess_text([file])
-            features_test_tfidf1 = tfidf1.transform(file).toarray()
+            file = preprocess_text([file])'''
+            features_test_tfidf1 = tfidf1.transform([file]).toarray()
             features_test_tfidf2 = tfidf2.transform([file_aspect]).toarray()
             X = np.concatenate((features_test_tfidf1, features_test_tfidf2), axis=1)
             pred = model.predict(X)
