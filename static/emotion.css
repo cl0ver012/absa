@@ -32,3 +32,11 @@ a {
 	width: 50%;
     border-radius: 20%;
   }
+  .p_center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+     
+    }
+  
